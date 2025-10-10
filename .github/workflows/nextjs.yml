@@ -21,7 +21,7 @@ jobs:
           cache: npm
       - name: Install deps
         run: npm ci
-      - name: Build (static export via output: 'export')
+      - name: Build (static export via output:'export')
         run: npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
