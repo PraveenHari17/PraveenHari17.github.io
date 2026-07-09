@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Praveen Hari — Computer Systems Engineering graduate specializing in real-time systems, full-stack development, and autonomous robotics." />
+<meta name="description" content="Praveen Hari — Carleton Computer Systems Engineering graduate building reliable data products, automation, and production software." />
 <meta name="author" content="Praveen Hari" />
-<meta property="og:title" content="Praveen Hari — Systems Engineer" />
-<meta property="og:description" content="Building real-time dashboards, autonomous robotics, and resilient full-stack systems." />
-<title>Praveen Hari — Systems Engineer</title>
+<meta property="og:title" content="Praveen Hari — Data & Software Engineer" />
+<meta property="og:description" content="Building data products, automation, real-time dashboards, and resilient software systems." />
+<title>Praveen Hari — Data & Software Engineer</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -381,6 +381,33 @@ nav.scrolled{
   animation: fadeUp 1.2s var(--ease-out) 1.3s forwards;
   transform: translateY(20px);
 }
+
+/* Recruiter-friendly role signals: concise, prominent, and linked to proof of work. */
+.role-lens{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  max-width: 620px;
+  margin-top: 1.25rem;
+  opacity: 0;
+  animation: fadeUp 1.2s var(--ease-out) 1.45s forwards;
+  transform: translateY(20px);
+}
+.role-lens-card{
+  display: block;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--line);
+  background: linear-gradient(135deg, rgba(232,160,74,0.08), transparent 58%), var(--bg-raised);
+  transition: transform 350ms var(--ease-out), border-color 350ms var(--ease-out), background 350ms var(--ease-out);
+}
+.role-lens-card:hover{
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  background: linear-gradient(135deg, rgba(232,160,74,0.16), transparent 70%), var(--bg-elevated);
+}
+.role-lens-card strong{ display: block; margin-top: 0.25rem; font-size: 1rem; font-weight: 500; }
+.role-lens-card span{ display: block; margin-top: 0.28rem; color: var(--ink-mute); font-size: 0.78rem; line-height: 1.45; }
+@media (max-width: 520px){ .role-lens{ grid-template-columns: 1fr; } }
 
 .btn{
   display: inline-flex;
@@ -1190,6 +1217,12 @@ footer{
 }
 .back-top.show{ opacity: 1; transform: none; }
 .back-top:hover{ background: var(--accent); color: var(--bg); border-color: var(--accent); }
+
+/* Keep the experience comfortable for visitors who prefer less motion. */
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{ animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+  .reveal, .reveal-stagger > *{ opacity: 1; transform: none; }
+}
 </style>
 </head>
 <body>
@@ -1213,11 +1246,11 @@ footer{
     <ul class="nav-links" id="navLinks">
       <li><a href="#about"><span class="num">01</span>About</a></li>
       <li><a href="#experience"><span class="num">02</span>Experience</a></li>
-      <li><a href="#projects"><span class="num">03</span>Projects</a></li>
+      <li><a href="#projects"><span class="num">03</span>Case studies</a></li>
       <li><a href="#skills"><span class="num">04</span>Skills</a></li>
       <li><a href="#education"><span class="num">05</span>Education</a></li>
       <li><a href="#contact"><span class="num">06</span>Contact</a></li>
-      <li><a href="#" class="resume-btn" id="resumeBtn">Résumé ↓</a></li>
+      <li><a href="#" class="resume-btn" id="resumeBtn">Save résumé</a></li>
     </ul>
     <button class="menu-toggle" id="menuToggle" aria-label="Menu">
       <span></span><span></span>
@@ -1232,34 +1265,46 @@ footer{
       <div class="hero-content">
         <div class="hero-marker">
           <span class="dot"></span>
-          <span>Ottawa, Canada · Available Q2 2026</span>
+          <span>Ottawa, Canada · Open to data &amp; software engineering roles</span>
         </div>
 
         <h1 class="hero-title">
-          <span class="line"><span>Building systems</span></span>
-          <span class="line"><span>that move, respond,</span></span>
-          <span class="line"><span>and <em class="accent-swash">stay standing.</em></span></span>
+          <span class="line"><span>Building data systems</span></span>
+          <span class="line"><span>and software that are</span></span>
+          <span class="line"><span><em class="accent-swash">useful under pressure.</em></span></span>
         </h1>
 
         <div class="hero-meta">
           <div class="hero-meta-item">
             <div class="caption">Focus</div>
-            <p>Real-time dashboards, autonomous robotics, full-stack infrastructure.</p>
+            <p>Data engineering, automation, real-time systems, and full-stack product development.</p>
           </div>
           <div class="hero-meta-item">
             <div class="caption">Program</div>
-            <p>B.Eng. Computer Systems · Carleton · April 2026.</p>
+            <p>B.Eng. Computer Systems Engineering · Carleton University · May 2026.</p>
           </div>
         </div>
 
         <div class="hero-cta">
           <a href="#projects" class="btn btn-primary">
-            <span>View selected work</span>
+            <span>Explore case studies</span>
             <span class="arrow">↗</span>
           </a>
           <a href="#contact" class="btn">
-            <span>Get in touch</span>
+            <span>Start a conversation</span>
             <span class="arrow">→</span>
+          </a>
+        </div>
+        <div class="role-lens" aria-label="Target roles">
+          <a class="role-lens-card" href="#projects">
+            <span class="caption">Target role</span>
+            <strong>Data Engineering</strong>
+            <span>Python · SQL · automation · analytics</span>
+          </a>
+          <a class="role-lens-card" href="#experience">
+            <span class="caption">Target role</span>
+            <strong>Software Engineering</strong>
+            <span>APIs · real-time systems · product delivery</span>
           </a>
         </div>
       </div>
@@ -1275,7 +1320,7 @@ footer{
         <span class="corner br"></span>
         <div class="portrait-caption">
           <span class="pulse"></span>
-          <span class="label"><strong>Praveen Hari</strong> · Systems Eng.</span>
+          <span class="label"><strong>Praveen Hari</strong> · Data &amp; Software Eng.</span>
         </div>
       </div>
     </div>
@@ -1291,7 +1336,7 @@ footer{
       </div>
       <div class="hero-stat">
         <div class="num">2026</div>
-        <div class="label">Graduating cohort</div>
+        <div class="label">Carleton grad · May 2026</div>
       </div>
     </div>
   </div>
@@ -1328,55 +1373,55 @@ footer{
       <div class="section-num">§ 01</div>
       <div>
         <h2 class="section-title">About<span style="color:var(--accent)">.</span></h2>
-        <p class="section-desc">Engineer by training, generalist by instinct. I like problems that sit between hardware and product.</p>
+        <p class="section-desc">A Computer Systems Engineering graduate who turns ambiguous needs into dependable data products and software.</p>
       </div>
     </header>
 
     <div class="about-grid">
       <div class="reveal">
         <p class="about-lead">
-          I'm a final-year Computer Systems Engineering student at Carleton, graduating <em>April 2026</em>. My work lives at the intersection of real-time software, distributed systems, and hardware that has to keep working when things go wrong.
+          I'm a <em>May 2026</em> Computer Systems Engineering graduate from Carleton University. I build dependable data workflows, real-time software, and customer-facing products that keep working when things get complicated.
         </p>
         <div class="about-body" style="margin-top:2rem">
-          <p>Over the last four years I've shipped production dashboards for global payment monitoring, built closed-loop control stacks for autonomous ground vehicles in a wireless research lab, and automated reporting pipelines that cut weekly analyst workload by a third.</p>
-          <p>What I enjoy: turning ambiguous requirements into reliable systems, debugging the gnarly seam where networks meet sensors, and writing code that stays legible six months later. Targeting software engineering, platform, and systems roles where depth actually matters.</p>
+          <p>I've shipped a live customer-support chatbot for Quotey.io, production-style dashboards for global payment monitoring, closed-loop control stacks for autonomous ground vehicles, and automated reporting workflows that cut weekly analyst workload by a third.</p>
+          <p>I enjoy making messy systems understandable: tracing a bad data path, designing a clean API, and building tooling people can actually use. I’m actively pursuing data engineering and software engineering roles where reliability and thoughtful product delivery matter.</p>
         </div>
 
         <ul class="focus-list">
           <li>
             <span class="marker">01</span>
-            <span><strong>Real-time & streaming systems</strong> — Socket.io, WebSockets, UDP telemetry, live dashboards without page reloads.</span>
+            <span><strong>Data &amp; analytics automation</strong> — Python, SQL, data validation, Power BI/Tableau reporting, and maintainable workflows.</span>
           </li>
           <li>
             <span class="marker">02</span>
-            <span><strong>Autonomous & embedded control</strong> — ROS 2 Humble, closed-loop control, Raspberry Pi, ESP32, FPGA/Verilog.</span>
+            <span><strong>Production software systems</strong> — Node.js, REST APIs, real-time dashboards, RBAC, and user-centered delivery.</span>
           </li>
           <li>
             <span class="marker">03</span>
-            <span><strong>Full-stack product development</strong> — React, Node.js, ASP.NET, REST APIs, Firebase, MySQL, SQL Server.</span>
+            <span><strong>Real-time &amp; embedded systems</strong> — ROS 2 Humble, closed-loop control, UDP telemetry, Raspberry Pi, ESP32, and FPGA/Verilog.</span>
           </li>
           <li>
             <span class="marker">04</span>
-            <span><strong>DevOps & infrastructure</strong> — Docker, Kubernetes, Terraform, Ansible, Azure DevOps, CI/CD pipelines.</span>
+            <span><strong>Cloud &amp; engineering workflow</strong> — Docker, Kubernetes, Terraform, Ansible, Azure DevOps, CI/CD, and Git.</span>
           </li>
         </ul>
       </div>
 
       <div class="reveal-stagger">
         <div class="about-card">
-          <div class="caption">Currently</div>
-          <h4>Capstone · Ericsson-Carleton Wireless Lab</h4>
-          <p>Designing a ROS 2 Humble control architecture for multi-agent pursuit-evasion on UGVs, with OptiTrack motion capture fed over UDP into a closed-loop controller.</p>
+          <div class="caption">Open to work</div>
+          <h4>Data Engineering &amp; Software Engineering</h4>
+          <p>Bringing a systems mindset to data pipelines, automation, APIs, dashboards, and the product details that make technology useful.</p>
         </div>
         <div class="about-card">
-          <div class="caption">Shipping</div>
-          <h4>Quotey AI Chatbot · Via Riipen Labs</h4>
-          <p>Solo build and deployment of a live production customer support chatbot on Crisp, handling real customer conversations with AI-driven responses and smart human handoff.</p>
+          <div class="caption">Recently shipped</div>
+          <h4>Quotey.io AI Chatbot · Via Riipen Labs</h4>
+          <p>Built and integrated a live Crisp chatbot into Quotey.io, pairing AI-assisted answers with a clear, context-rich handoff to the team.</p>
         </div>
         <div class="about-card">
-          <div class="caption">Previously</div>
-          <h4>DizzItUp · Full-Stack Intern</h4>
-          <p>Built the real-time payment monitoring dashboard: Socket.io streaming, Chart.js visualizations, Leaflet + Globe.gl geospatial heatmaps.</p>
+          <div class="caption">Research</div>
+          <h4>Ericsson-Carleton Wireless Lab</h4>
+          <p>Designed a ROS 2 control architecture for multi-agent UGVs, moving live OptiTrack telemetry over UDP into a closed-loop controller.</p>
         </div>
         <div class="about-card">
           <div class="caption">Signals</div>
@@ -1396,13 +1441,40 @@ footer{
       <div class="section-num">§ 02</div>
       <div>
         <h2 class="section-title">Experience<span style="color:var(--accent)">.</span></h2>
-        <p class="section-desc">Research, industry, and customer-facing work across hardware, software, and operations. Tap any role to expand.</p>
+        <p class="section-desc">A mix of live product delivery, research, and operational experience. Select a role to see the technical contribution.</p>
       </div>
     </header>
 
     <div class="timeline" id="timeline">
 
-      <article class="exp-item active">
+      <article class="exp-item active" tabindex="0" role="button" aria-expanded="true">
+        <div class="exp-head">
+          <div>
+            <h3 class="exp-role">AI Chatbot Developer <span style="color:var(--ink-mute);font-family:var(--font-mono);font-size:0.8rem;display:block;margin-top:0.3rem">Live customer-support experience</span></h3>
+            <div class="exp-org">Quotey.io · Via Riipen Labs</div>
+          </div>
+          <div class="exp-date">2026</div>
+        </div>
+        <div class="exp-expand-hint">+ expand</div>
+        <div class="exp-detail">
+          <ul class="exp-bullets">
+            <li>Built and integrated a customer-facing AI chatbot into Quotey.io using Crisp, taking the experience from configuration through live website deployment.</li>
+            <li>Designed AI-assisted response flows for common customer questions, balancing helpful automation with concise, trustworthy answers.</li>
+            <li>Connected the chatbot to Crisp’s shared inbox and handoff workflow so the Quotey team can take over complex conversations with context intact.</li>
+            <li>Created a maintainable knowledge and intent structure that lets non-technical teammates refine answers as customer needs evolve.</li>
+          </ul>
+          <div class="exp-stack">
+            <span class="tag">Crisp</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">Webhooks</span>
+            <span class="tag">AI Support Workflows</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="exp-item" tabindex="0" role="button" aria-expanded="false">
         <div class="exp-head">
           <div>
             <h3 class="exp-role">Research Developer <span style="color:var(--ink-mute);font-family:var(--font-mono);font-size:0.8rem;display:block;margin-top:0.3rem">Capstone · Autonomous Multi-Agent Pursuit-Evasion</span></h3>
@@ -1430,7 +1502,7 @@ footer{
         </div>
       </article>
 
-      <article class="exp-item">
+      <article class="exp-item" tabindex="0" role="button" aria-expanded="false">
         <div class="exp-head">
           <div>
             <h3 class="exp-role">Full-Stack Developer Intern <span style="color:var(--ink-mute);font-family:var(--font-mono);font-size:0.8rem;display:block;margin-top:0.3rem">Real-time payment monitoring platform</span></h3>
@@ -1459,7 +1531,7 @@ footer{
         </div>
       </article>
 
-      <article class="exp-item">
+      <article class="exp-item" tabindex="0" role="button" aria-expanded="false">
         <div class="exp-head">
           <div>
             <h3 class="exp-role">Customer Service Associate <span style="color:var(--ink-mute);font-family:var(--font-mono);font-size:0.8rem;display:block;margin-top:0.3rem">High-volume operations · team training</span></h3>
@@ -1483,7 +1555,7 @@ footer{
         </div>
       </article>
 
-      <article class="exp-item">
+      <article class="exp-item" tabindex="0" role="button" aria-expanded="false">
         <div class="exp-head">
           <div>
             <h3 class="exp-role">Retail Associate <span style="color:var(--ink-mute);font-family:var(--font-mono);font-size:0.8rem;display:block;margin-top:0.3rem">Inventory · customer support</span></h3>
@@ -1517,7 +1589,7 @@ footer{
       <div class="section-num">§ 03</div>
       <div>
         <h2 class="section-title">Selected<span style="color:var(--accent)"> </span><em>projects.</em></h2>
-        <p class="section-desc">A sampling of things I've designed, shipped, or broken in interesting ways. Tap a card for the full breakdown.</p>
+        <p class="section-desc">Case studies in customer-facing AI, data automation, real-time systems, and dependable software delivery. Open a card for the full breakdown.</p>
       </div>
     </header>
 
@@ -1545,7 +1617,7 @@ footer{
       <div class="section-num">§ 04</div>
       <div>
         <h2 class="section-title">Technical<span style="color:var(--accent)"> </span><em>toolkit.</em></h2>
-        <p class="section-desc">The languages, frameworks, and platforms I reach for most often.</p>
+        <p class="section-desc">A practical toolkit for building data workflows, dependable software, and systems that are easy to operate.</p>
       </div>
     </header>
 
@@ -1592,13 +1664,15 @@ footer{
         <div class="skill-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
         </div>
-        <h4>Data &amp; Databases</h4>
+        <h4>Data Engineering &amp; Analytics</h4>
         <div class="skill-tags">
           <span class="tag">MySQL</span>
           <span class="tag">SQL Server (SSMS)</span>
           <span class="tag">Firebase</span>
           <span class="tag">Pandas</span>
           <span class="tag">NumPy</span>
+          <span class="tag">Data Validation</span>
+          <span class="tag">Workflow Automation</span>
           <span class="tag">Power BI</span>
           <span class="tag">Tableau</span>
           <span class="tag">Excel VBA</span>
@@ -1669,7 +1743,7 @@ footer{
       <div class="section-num">§ 05</div>
       <div>
         <h2 class="section-title">Education &amp; <em>credentials.</em></h2>
-        <p class="section-desc">Formal training, certifications, and recognition.</p>
+        <p class="section-desc">Computer Systems Engineering training, certifications, and recognition.</p>
       </div>
     </header>
 
@@ -1678,7 +1752,7 @@ footer{
         <div class="caption">Degree</div>
         <h3>B.Eng. Computer Systems Engineering</h3>
         <p style="margin-top:0.8rem">Carleton University · Ottawa, Ontario</p>
-        <div class="edu-dates">Sep 2021 — Apr 2026</div>
+        <div class="edu-dates">Sep 2021 — May 2026</div>
       </div>
       <ul class="edu-list">
         <li>
@@ -1749,8 +1823,8 @@ footer{
 
     <div class="contact-inner">
       <div class="reveal">
-        <h3 class="contact-heading">Have a role, idea, or <em>tough problem?</em></h3>
-        <p class="contact-sub">The fastest way to reach me is email or LinkedIn. I reply within a day or two — sooner if it's interesting.</p>
+        <h3 class="contact-heading">Have a role, data challenge, or <em>tough problem?</em></h3>
+        <p class="contact-sub">I’m actively exploring data engineering and software engineering opportunities. The fastest way to reach me is email or LinkedIn.</p>
         <div class="hero-cta" style="margin-top:2rem">
           <a href="mailto:praveen22h@gmail.com" class="btn btn-primary">
             <span>Start a conversation</span>
@@ -1842,8 +1916,8 @@ footer{
 <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
 
 <!-- PROJECT MODAL -->
-<div class="modal-overlay" id="modal">
-  <div class="modal">
+<div class="modal-overlay" id="modal" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <button class="modal-close" id="modalClose">✕</button>
     <div id="modalContent"></div>
   </div>
@@ -1857,12 +1931,12 @@ const PROJECTS = [
   {
     id: "quotey",
     category: "ai",
-    categoryLabel: "AI / Customer Support · Live",
+    categoryLabel: "AI / Customer Experience · Live",
     year: "2026",
-    title: "Quotey AI Support Chatbot",
-    description: "Production customer support chatbot deployed on Quotey's live site via Crisp — handling real-time inquiries with AI-driven responses and seamless handoff to human agents when needed.",
+    title: "Quotey.io AI Support Chatbot",
+    description: "Built and integrated a live customer-support chatbot into Quotey.io via Crisp, combining AI-assisted answers with seamless handoff to the Quotey team.",
     stack: ["Crisp", "JavaScript", "Node.js", "REST APIs", "NLP", "Webhooks"],
-    overview: "A solo engagement through Riipen Labs building and deploying a live customer support chatbot for Quotey. The bot sits on the company's live platform, answering customer questions, triaging inquiries, and routing complex cases to human agents — shipped end-to-end from design to production deployment.",
+    overview: "A solo Riipen Labs engagement to build and deploy a live customer-support chatbot for Quotey.io. The bot sits on the company’s website, answers customer questions, triages inquiries, and routes complex cases to human agents — shipped end-to-end from design through production deployment.",
     features: [
       "Deployed and currently live on Quotey's production customer-facing platform",
       "Integrated with the Crisp messaging platform for unified inbox, analytics, and agent handoff",
@@ -1967,7 +2041,7 @@ const PROJECTS = [
   {
     id: "automation",
     category: "analytics",
-    categoryLabel: "Automation · Analytics",
+    categoryLabel: "Data Automation · Analytics",
     year: "2024",
     title: "Business Process Automation Suite",
     description: "Automated reporting and BI dashboards replacing manual spreadsheet workflows — weekly reporting time down ~35%, manual data handling down ~60%.",
@@ -2282,7 +2356,7 @@ const grid = document.getElementById('projectsGrid');
 function renderProjects(filter = 'all'){
   const filtered = filter === 'all' ? PROJECTS : PROJECTS.filter(p => p.category === filter);
   grid.innerHTML = filtered.map((p, i) => `
-    <article class="project-card reveal" data-id="${p.id}" style="transition-delay:${i * 60}ms">
+    <article class="project-card reveal" data-id="${p.id}" role="button" tabindex="0" aria-label="Open ${p.title} case study" style="transition-delay:${i * 60}ms">
       <div class="project-visual">${PROJECT_SVGS[p.id] || ''}</div>
       <div class="project-arrow">↗</div>
       <div class="project-body">
@@ -2303,6 +2377,12 @@ function renderProjects(filter = 'all'){
   document.querySelectorAll('.project-card').forEach(c => {
     observer.observe(c);
     c.addEventListener('click', () => openModal(c.dataset.id));
+    c.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        openModal(c.dataset.id);
+      }
+    });
   });
 }
 
@@ -2312,13 +2392,15 @@ function renderProjects(filter = 'all'){
 const modal = document.getElementById('modal');
 const modalContent = document.getElementById('modalContent');
 const modalClose = document.getElementById('modalClose');
+let lastModalTrigger = null;
 
 function openModal(id){
   const p = PROJECTS.find(x => x.id === id);
   if(!p) return;
+  lastModalTrigger = document.activeElement;
   modalContent.innerHTML = `
     <div class="caption">${p.categoryLabel} · ${p.year}</div>
-    <h3>${p.title}</h3>
+    <h3 id="modalTitle">${p.title}</h3>
     <div class="modal-section">
       <h5>Overview</h5>
       <p>${p.overview}</p>
@@ -2343,11 +2425,15 @@ function openModal(id){
     </div>
   `;
   modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
+  modalClose.focus();
 }
 function closeModal(){
   modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
+  if(lastModalTrigger && typeof lastModalTrigger.focus === 'function') lastModalTrigger.focus();
 }
 modalClose.addEventListener('click', closeModal);
 modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
@@ -2430,10 +2516,20 @@ navLinksEl.addEventListener('click', (e) => {
 /* =========================================================
    EXPERIENCE ACCORDION
    ========================================================= */
+function setActiveExperience(item){
+  document.querySelectorAll('.exp-item').forEach(i => {
+    const isActive = i === item;
+    i.classList.toggle('active', isActive);
+    i.setAttribute('aria-expanded', String(isActive));
+  });
+}
 document.querySelectorAll('.exp-item').forEach(item => {
-  item.addEventListener('click', () => {
-    document.querySelectorAll('.exp-item').forEach(i => i.classList.remove('active'));
-    item.classList.add('active');
+  item.addEventListener('click', () => setActiveExperience(item));
+  item.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' '){
+      e.preventDefault();
+      setActiveExperience(item);
+    }
   });
 });
 
